@@ -9,6 +9,7 @@ import com.opencsv.exceptions.CsvValidationException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -36,7 +37,7 @@ public class CSV {
     }
 
     @SuppressWarnings("unchecked")
-    public static LinkedHashMap<String, LinkedHashMap<String, Object>> toHashMap(FileReader file) throws CsvValidationException, IOException {
+    public static LinkedHashMap<String, LinkedHashMap<String, Object>> toHashMap(Reader file) throws CsvValidationException, IOException {
         CSVReader reader = new CSVReader(file);
 
         LinkedHashMap<String, LinkedHashMap<String, Object>> hashMap = new LinkedHashMap<>();

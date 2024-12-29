@@ -4,9 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.opencsv.CSVWriter;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
@@ -54,7 +52,7 @@ public class JSON {
         return list;
     }
 
-    public static void toCSV(FileReader inputFile, FileWriter outputFile) throws IOException {
+    public static void toCSV(Reader inputFile, Writer outputFile) throws IOException {
         Gson gson = new Gson();
         Type inputType = new TypeToken<LinkedHashMap<String, LinkedHashMap<String, Object>>>() {}.getType();
         LinkedHashMap<String, LinkedHashMap<String, Object>> hashMap = gson.fromJson(inputFile, inputType);
